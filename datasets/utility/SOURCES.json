@@ -1,0 +1,23 @@
+{
+  "arc": {
+    "source": "https://ai2-public-datasets.s3.amazonaws.com/arc/ARC-V1-Feb2018.zip",
+    "split": "validation",
+    "records": 299,
+    "sha256": "91092cf69dfe2536bf421157ea9c5a04881c8f82150fbed3c5a9134378b5cd1d",
+    "transformation": "JSONL serialization of original records"
+  },
+  "sciq": {
+    "source": "https://ai2-public-datasets.s3.amazonaws.com/sciq/SciQ.zip",
+    "split": "validation",
+    "records": 1000,
+    "sha256": "b3d7150275822a8a0d66e8871fc888cba166fd5ed3594f53a41dbe8b2ab422b1",
+    "transformation": "JSONL serialization of original records"
+  },
+  "math": {
+    "source": "https://openaipublic.blob.core.windows.net/simple-evals/math_500_test.csv",
+    "split": "test",
+    "records": 500,
+    "sha256": "124b865be83c0b8a984d3c169e7864555579cbb63efca66f024cd79105d1d8d4",
+    "transformation": "final answer extracted from last balanced boxed expression"
+  }
+}

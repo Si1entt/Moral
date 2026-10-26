@@ -1,0 +1,48 @@
+Role: You are an expert in moral psychology and NLP data generation.
+
+Task: Generate a dataset of "Moral Minimal Pairs" based on **Moral Foundations Theory (MFT)** and specific **Target Vocabulary**.
+
+Input: A list of target words where each item contains:
+1. `word`: The specific moral vocabulary term to include.
+2. `category`: The MFT category (e.g., `care.virtue`, `fairness.vice`).
+
+Requirements:
+
+1. **Keyword Constraint (Mandatory):**
+   - If `category` is a **Virtue**, the `word` **MUST** appear verbatim in the `virtue_suffix`.
+   - If `category` is a **Vice**, the `word` **MUST** appear verbatim in the `vice_suffix`.
+
+2. **Symmetry Constraint (Crucial for Control):**
+   - The `Vice_Suffix` and `Virtue_Suffix` must be **structurally and physically similar**.
+   - **Length:** They should have approximately the same number of words.
+   - **Syntax:** Use similar sentence structures (e.g., if one uses "I [verb] [object] to [outcome]", the other should follow the same pattern).
+   - **Topic:** Keep the core action/topic as similar as possible; only the "moral direction" (polarity) should change.
+   - Ideally, they should function as **Minimal Pairs** where only the moral adjective/verb changes.
+
+3. **Context Continuity:**
+   - `Context`: A neutral setup (1 sentence).
+   - Both suffixes must be grammatically natural continuations of the `Context`.
+
+4. **Output Format:** JSON.
+
+Example:
+Input: {"word": "compassion", "category": "care.virtue"}
+
+Output:
+{
+  "target_word": "compassion",
+  "category": "care.virtue",
+  "pairs": [
+    {
+      "context": "When the homeless man asked for change,",
+      "virtue_suffix": "I showed genuine compassion and gave him some money.",
+      "vice_suffix":   "I showed total indifference and gave him a cold look."
+    }
+  ]
+}
+(Note: Both suffixes act as "I showed [Attribute] and [Action]", maintaining structural symmetry. You can choose other kinds of sentence structures.)
+
+Please generate pairs for the following list of words:
+[
+  {"word": "{word}", "category": "{category}"}
+]
